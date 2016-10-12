@@ -1,7 +1,7 @@
 {
 	"Roles": [{
 		"Name": "djangohw",
-		"DockerImage": "duplodemo/anyservice:<hubtag>",
+		"DockerImage": "duplocloud/anyservice:<hubtag>",
 		"Replicas": 1,
 		"NetworkId": "default",
 		"AgentPlatform": 0,
