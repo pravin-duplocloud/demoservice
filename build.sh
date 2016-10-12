@@ -1,5 +1,5 @@
 #!/bin/bash -e
-
+sleep 1h
 docker info
 docker build -t djangoservice .
 docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
