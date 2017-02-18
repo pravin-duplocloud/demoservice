@@ -32,7 +32,7 @@
 		"State": null
 	}, {
 		"Name": "demo_db",
-		"DockerImage": "redis",
+		"DockerImage": "redis:latest",
 		"Replicas": 1,
 		"NetworkId": "default",
 		"AgentPlatform": 0,
