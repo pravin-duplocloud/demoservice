@@ -13,6 +13,6 @@ from django.views.decorators.http import require_POST
 
 @require_GET
 def getInfo(httpRequest):
-	response = 'CICD DEMO!'
+	response = 'CICD DEMO for innomid!'
 	return HttpResponse(response, content_type="application/json")
 
