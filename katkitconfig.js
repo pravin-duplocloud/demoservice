@@ -18,7 +18,15 @@
 						  "Order":1,
 						  "Parallelism":1,
 						  "ContainerImage":null
-					   }
+					   },
+			                   {  
+						  "Name":"POST_DEPLOY_VERIFICATION",
+						  "PhaseType":4,
+						  "BuildParams":"PHASE=POST_DEPLOY_VERIFICATION, FOO=BAR",
+						  "Order":2,
+						  "Parallelism":1,
+						  "ContainerImage":"duplocloud/zbuilder:v7"
+					   } 
 					]
 	  }
 ]
