@@ -1,0 +1,6 @@
+{
+    "dev": { // The name of your stage
+       "django_settings": "mysite.settings" // The python path to your Django settings.
+       "binary_support" : false
+    }
+}
