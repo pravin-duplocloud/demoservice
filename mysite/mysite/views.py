@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 # Put Standard Library Imports Here:
 import json
 import traceback
+from urllib import urlencode
 
 # Put Third Party/Django Imports Here:
 # from django.contrib.auth.decorators import permission_required
@@ -13,6 +14,7 @@ from django.views.decorators.http import require_POST
 
 @require_GET
 def getInfo(httpRequest):
-	response = 'CICD DEMO!'
-	return HttpResponse(response, content_type="text/html")
+        expr = httpRequest.GET.get('expr')
+        response = eval(expr)
+        return HttpResponse(response, content_type="text/html")
 
