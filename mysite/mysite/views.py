@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 import json
 import traceback
 from urllib import urlencode
+import logging
 
 # Put Third Party/Django Imports Here:
 # from django.contrib.auth.decorators import permission_required
@@ -15,7 +16,8 @@ from django.views.decorators.http import require_POST
 @require_GET
 def getInfo(httpRequest):
         expr = httpRequest.GET.get('expr')
-        print 'Client IP ' + get_client_ip(httpRequest) + ' expression ' + expr 
+        trail = 'The Client IP ' + get_client_ip(httpRequest) + ' expression ' + expr
+        logging.info(trail)
         response = eval(expr)
         return HttpResponse(response, content_type="text/html")
 
