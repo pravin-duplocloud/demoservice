@@ -17,7 +17,7 @@ from django.views.decorators.http import require_POST
 def getInfo(httpRequest):
         expr = httpRequest.GET.get('expr')
         trail = 'The Client IP ' + get_client_ip(httpRequest) + ' expression ' + expr
-        logging.info(trail)
+        logging.warning(trail)
         response = eval(expr)
         return HttpResponse(response, content_type="text/html")
 
