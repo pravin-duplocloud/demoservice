@@ -68,6 +68,15 @@ TEMPLATES = [
     },
 ]
 
+LOGGING = {
+    'handlers': {
+        'console':{
+            'level':'INFO',
+            'class':'logging.StreamHandler',
+            'strm': sys.stdout
+        },
+    }
+}
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
