@@ -69,11 +69,12 @@ TEMPLATES = [
 ]
 
 LOGGING = {
+    'version': 1,
     'handlers': {
         'console':{
             'level':'INFO',
             'class':'logging.StreamHandler',
-            'strm': sys.stdout
+            'stream': sys.stdout
         },
     }
 }
