@@ -1,9 +1,11 @@
 FROM ubuntu:14.04
+RUN apt-get clean
 RUN apt-get update
 RUN apt-get install --yes --no-install-recommends software-properties-common
 RUN apt-get install --yes --no-install-recommends curl
 RUN apt-get install --yes --no-install-recommends python-pip
 RUN apt-get install --yes --no-install-recommends libmysqlclient-dev
+RUN python -m pip install --upgrade pip setuptools
 RUN pip install Django
 ADD mysite /mysite
 RUN apt-get install --yes --no-install-recommends supervisor
