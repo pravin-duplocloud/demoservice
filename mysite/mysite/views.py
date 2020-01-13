@@ -13,6 +13,6 @@ from django.views.decorators.http import require_POST
 
 @require_GET
 def getInfo(httpRequest):
-	response = 'nghtyiis CICD DEMO!'
+	response = 'ghtyi9686896 CICD DEMO!'
 	return HttpResponse(response, content_type="text/html")
 
