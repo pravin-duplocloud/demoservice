@@ -20,5 +20,5 @@ from . import views
 urlpatterns = [
     url(r'^(?i)admin/', admin.site.urls),
     url(r'^(?i)getInfo',  views.getInfo),
-    url(r'^$', lambda r: HttpResponseRedirect('getInfo/')),
+    url(r'^$', views.getInfo),
 ]
