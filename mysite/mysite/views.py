@@ -13,6 +13,6 @@ from django.views.decorators.http import require_POST
 
 @require_GET
 def getInfo(httpRequest):
-	response = 'Welcome to the Payment Hub application!'
+	response = 'Welcome to the Payment Husshshs !'
 	return HttpResponse(response, content_type="text/html")
 
