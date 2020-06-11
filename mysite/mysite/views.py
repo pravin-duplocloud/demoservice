@@ -13,6 +13,6 @@ from django.views.decorators.http import require_POST
 
 @require_GET
 def getInfo(httpRequest):
-	response = 'my demo today at sunday may 24 !'
+	response = 'my demo of build as a microservice !'
 	return HttpResponse(response, content_type="text/html")
 
