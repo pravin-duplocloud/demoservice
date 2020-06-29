@@ -15,4 +15,3 @@ if [[ "x$PHASE" != "x" ]]; then
 else
   echo "****** Error Phase is not set"
 fi
-

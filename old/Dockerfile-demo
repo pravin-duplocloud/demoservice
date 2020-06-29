@@ -1,3 +1,4 @@
+
 FROM ubuntu:18.04
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -46,23 +47,31 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 RUN python3 -V
 RUN python -V
 
-###############
-#RUN git clone https://github.com/duplodemo/demoservice.git
-ADD mysite /mysite
-WORKDIR /mysite
+RUN git clone https://github.com/duplodemo/demoservice.git
 RUN pip install virtualenv
-SHELL ["/bin/bash", "-c"]
-RUN virtualenv duplo && \
-   source duplo/bin/activate  && \
-   pip install awscli boto click zappa requests  && \
-   zappa package dev  && \
-   ls *.zip
-
-#RUN pip install awscli boto3 click zappa requests
-#todo:find zip and upload to s3
-###############
+RUN pip install awscli boto click zappa requests
 #
 ADD startup.sh /
 RUN chmod 777 /*.sh
 
 CMD ["/startup.sh"]
+
+
+
+# FROM ubuntu:14.04
+# RUN apt-get clean
+# RUN apt-get update
+# RUN apt-get install --yes --no-install-recommends software-properties-common
+# RUN apt-get install --yes --no-install-recommends curl
+# RUN apt-get install --yes --no-install-recommends python-pip
+# RUN apt-get install --yes --no-install-recommends libmysqlclient-dev
+# RUN python -m pip install --upgrade pip setuptools
+# RUN pip install Django
+# ADD mysite /mysite
+# RUN apt-get install --yes --no-install-recommends supervisor
+# RUN mkdir -p /var/log/supervisor
+# ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#
+# EXPOSE 80
+# ENTRYPOINT ["/bin/bash", "-c", "/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf -n"]
+#
