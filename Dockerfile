@@ -48,15 +48,21 @@ RUN python -V
 
 ###############
 #RUN git clone https://github.com/duplodemo/demoservice.git
+#
 ADD mysite /mysite
-WORKDIR /mysite
+WORKDIR /mysite 
+#outsie venv
+RUN pip install awscli boto3 click zappa requests
+RUN pip install -r requirements.txt
+###
 RUN pip install virtualenv
 SHELL ["/bin/bash", "-c"]
 RUN virtualenv duplo && \
    source duplo/bin/activate  && \
    pip install awscli boto click zappa requests  && \
+   pip install -r requirements.txt  && \
    zappa package dev  && \
-   ls *.zip
+   ls -alth *.zip
 
 #RUN pip install awscli boto3 click zappa requests
 #todo:find zip and upload to s3
