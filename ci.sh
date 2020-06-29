@@ -3,7 +3,7 @@
 if [[ "x$PHASE" != "x" ]]; then
   if [[ "$PHASE" == "PRE_DEPLOY_BUILD" ]]; then
     echo "Demo Test Build Docker image and push to docker hub!"
-    ./build.sh
+    ./build-zappa.sh
     exit 0
   elif [[ "$PHASE" == "POST_DEPLOY_VERIFICATION" ]]; then
     echo "No  action needed, Run under tests section in cci"

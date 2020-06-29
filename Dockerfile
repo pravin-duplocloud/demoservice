@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.04 #AS stage1
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get upgrade -y && apt-get clean
@@ -50,7 +50,7 @@ RUN python -V
 #RUN git clone https://github.com/duplodemo/demoservice.git
 #
 ADD mysite /mysite
-WORKDIR /mysite 
+WORKDIR /mysite
 #outsie venv
 RUN pip install awscli boto3 click zappa requests
 RUN pip install -r requirements.txt
@@ -64,6 +64,9 @@ RUN virtualenv duplo && \
    zappa package dev  && \
    ls -alth *.zip
 
+#new zappa build is at /misite/zip/mysite-zappa.zip
+RUN mkdir zip && mv mysite-*.zip zip/mysite-zappa.zip  && ls -atlh zip
+
 #RUN pip install awscli boto3 click zappa requests
 #todo:find zip and upload to s3
 ###############
@@ -72,3 +75,6 @@ ADD startup.sh /
 RUN chmod 777 /*.sh
 
 CMD ["/startup.sh"]
+
+# FROM scratch AS export-stage
+# COPY  --from=stage1 /mysite/zip/mysite-zappa.zip .
