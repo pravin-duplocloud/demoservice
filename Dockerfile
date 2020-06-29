@@ -71,7 +71,7 @@ RUN mkdir zip && mv mysite-*.zip zip/mysite-zappa.zip  && ls -atlh zip
 #todo:find zip and upload to s3
 ###############
 #
-ADD startup.sh /
+ADD *.sh /
 RUN chmod 777 /*.sh
 
 CMD ["/startup.sh"]
