@@ -32,5 +32,5 @@ mv mysite-*.zip zip/mysite-zappa.zip
 ls -atlh zip
 
 #s3 uppload
-aws s3 cp /mysite/zip/mysite-zappa.zip s3://S3_BUCKET/
+aws s3 cp /mysite/zip/mysite-zappa.zip s3://$S3_BUCKET/
 echo "Docker lambda_api_gateway_demo Build Finished.."
