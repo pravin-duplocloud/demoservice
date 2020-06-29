@@ -9,7 +9,7 @@
 						  "BuildParams":"PHASE=PRE_DEPLOY_BUILD, FOO=BAR1",
 						  "Order":0,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:v7"
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   },
 					   {
 						  "Name":"DEPLOY",
@@ -25,7 +25,7 @@
 						  "BuildParams":"PHASE=POST_DEPLOY_VERIFICATION, FOO=BAR",
 						  "Order":2,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:v7"
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   }
 					]
 	  },
@@ -39,7 +39,7 @@
 						  "BuildParams":"PHASE=PRE_DEPLOY_BUILD, FOO=BAR",
 						  "Order":0,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:v7"
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   },
 					   {
 						  "Name":"DEPLOY",
@@ -69,7 +69,7 @@
 						  "BuildParams":"PHASE=POST_DEPLOY_VERIFICATION, FOO=BAR",
 						  "Order":2,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:v7"
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   }
 					]
 	  }
