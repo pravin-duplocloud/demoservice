@@ -17,7 +17,7 @@
 						  "BuildParams":"PHASE=DEPLOY",
 						  "Order":1,
 						  "Parallelism":1,
-						  "ContainerImage":null
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   },
 			                   {
 						  "Name":"POST_DEPLOY_VERIFICATION",
@@ -47,7 +47,7 @@
 						  "BuildParams":"PHASE=DEPLOY",
 						  "Order":1,
 						  "Parallelism":1,
-						  "ContainerImage":null
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   }
 					]
 	  },
@@ -61,7 +61,7 @@
 						  "BuildParams":"PHASE=DEPLOY",
 						  "Order":1,
 						  "Parallelism":1,
-						  "ContainerImage":null
+						  "ContainerImage":"duplocloud/zbuilder:py38_v1"
 					   },
 			                   {
 						  "Name":"POST_DEPLOY_VERIFICATION",
