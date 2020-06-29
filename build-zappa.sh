@@ -10,8 +10,8 @@
 # rm get-pip.py
 # apt-get python3-venv
 #########
-RUN python3 -V
-RUN python -V
+python3 -V
+python -V
 
 ###############
 #git clone https://github.com/duplodemo/demoservice.git #???
