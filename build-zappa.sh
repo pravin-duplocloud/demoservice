@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 ########
+apt-get update
 apt-get install -y curl python3.7 python3.7-dev python3.7-distutils python3-venv
 update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
 update-alternatives --set python /usr/bin/python3.7
