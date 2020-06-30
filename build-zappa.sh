@@ -15,7 +15,7 @@ python -V
 
 ###############
 #git clone https://github.com/duplodemo/demoservice.git #???
-cd demoservice/mysite
+cd mysite
 pip install awscli boto3 click zappa requests
 pip install -r requirements.txt
 ###
