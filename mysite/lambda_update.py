@@ -5,7 +5,7 @@ import requests
 
 def update_lambda():
 
-    API_TOKEN = os.getenv('API_TOKEN')
+    API_TOKEN = os.getenv('DUPLO_API_TOKEN')
     S3_BUCKET_LAMBDA = os.getenv('S3_BUCKET_LAMBDA')
     TENANTID = os.getenv('TENANTID')
     CI_TENANT_NAME = os.getenv('CI_TENANT_NAME')
