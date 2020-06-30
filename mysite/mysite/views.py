@@ -13,6 +13,6 @@ from django.views.decorators.http import require_POST
 
 @require_GET
 def getInfo(httpRequest):
-	response = 'my demo of build for iot prject ! demo !'
+	response = 'my demo of build for iot prject ! api demo !'
 
 	return HttpResponse(response, content_type="text/html")
