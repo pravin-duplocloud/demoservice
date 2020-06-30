@@ -9,7 +9,7 @@
 						  "BuildParams":"PHASE=PRE_DEPLOY_BUILD, FOO=BAR1",
 						  "Order":0,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   },
 					   {
 						  "Name":"DEPLOY",
@@ -17,7 +17,7 @@
 						  "BuildParams":"PHASE=DEPLOY",
 						  "Order":1,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   },
 			                   {
 						  "Name":"POST_DEPLOY_VERIFICATION",
@@ -25,7 +25,7 @@
 						  "BuildParams":"PHASE=POST_DEPLOY_VERIFICATION, FOO=BAR",
 						  "Order":2,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   }
 					]
 	  },
@@ -39,7 +39,7 @@
 						  "BuildParams":"PHASE=PRE_DEPLOY_BUILD, FOO=BAR",
 						  "Order":0,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   },
 					   {
 						  "Name":"DEPLOY",
@@ -47,7 +47,7 @@
 						  "BuildParams":"PHASE=DEPLOY",
 						  "Order":1,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   }
 					]
 	  },
@@ -61,7 +61,7 @@
 						  "BuildParams":"PHASE=DEPLOY",
 						  "Order":1,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   },
 			                   {
 						  "Name":"POST_DEPLOY_VERIFICATION",
@@ -69,7 +69,7 @@
 						  "BuildParams":"PHASE=POST_DEPLOY_VERIFICATION, FOO=BAR",
 						  "Order":2,
 						  "Parallelism":1,
-						  "ContainerImage":"duplocloud/zbuilder:lambda_v5"
+						  "ContainerImage":"duplocloud/zbuilder:lambda_v6"
 					   }
 					]
 	  }

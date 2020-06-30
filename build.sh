@@ -1,9 +1,37 @@
 #!/bin/bash -e
-docker info
-docker build -t lambda_api_gateway_demo  .
 
-# docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-# docker tag -f djangoservice duplocloud/anyservice:$CIRCLE_SHA1
-# docker push duplocloud/anyservice:$CIRCLE_SHA1
+########
+# apt-get update
+# apt-get install -y curl python3.7 python3.7-dev python3.7-distutils python3-venv
+# update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+# update-alternatives --set python /usr/bin/python3.7
+# curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+# python get-pip.py --force-reinstall
+# rm get-pip.py
+# apt-get python3-venv
+#########
+python3 -V
+python -V
 
+###############
+#git clone https://github.com/duplodemo/demoservice.git #???
+cd mysite
+pip install awscli boto3 click zappa requests
+pip install -r requirements.txt
+###
+pip install virtualenv
+virtualenv duplo
+source duplo/bin/activate
+pip install awscli boto click zappa requests
+pip install -r requirements.txt
+zappa package dev
+ls -alth *.zip
+
+#copy zappa zip build to ./mysite/zip/mysite-zappa.zip
+mkdir zip
+mv mysite-*.zip zip/mysite-zappa.zip
+ls -atlh zip
+
+#s3 uppload 
+aws s3 cp zip/mysite-zappa.zip s3://$S3_BUCKET_LAMBDA/
 echo "Docker lambda_api_gateway_demo Build Finished.."
