@@ -34,5 +34,5 @@ ls -atlh zip
 
 #s3 uppload
 S3_BUCKET=${S3_BUCKET:-duploservices-dev01-lambda-package-128329325849},
-aws s3 cp  mysite-zappa.zip s3://$S3_BUCKET/
+aws s3 cp zip/mysite-zappa.zip s3://$S3_BUCKET/
 echo "Docker lambda_api_gateway_demo Build Finished.."
