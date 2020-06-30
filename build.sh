@@ -22,7 +22,7 @@ pip install -r requirements.txt
 pip install virtualenv
 virtualenv duplo
 source duplo/bin/activate
-pip install awscli boto click zappa requests
+pip install awscli boto3 click zappa requests
 pip install -r requirements.txt
 zappa package dev
 ls -alth *.zip
@@ -35,5 +35,12 @@ ls -atlh zip
 #s3 uppload
 aws s3 cp zip/mysite-zappa.zip s3://$S3_BUCKET_LAMBDA/
 
+echo "python lambda_update.py  start"
+python lambda_update.py
+echo "python lambda_update.py  done"
+
 cd ..
-echo "Docker lambda_api_gateway_demo Build Finished.."
+
+echo "lambda_api_gateway_demo Build Finished.."
+
+# sleep 1h
