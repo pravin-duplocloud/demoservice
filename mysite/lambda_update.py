@@ -13,7 +13,9 @@ def update_lambda():
     s3_file = 'mysite-zappa.zip'
 
     #UpdateLambdaFunctionConfiguration
-
+    headers = {"Authorization": "Bearer {0}".format( API_TOKEN ),
+                "Content-Type":"application/json; charset=utf-8",
+                "Accept":"application/json, text/plain, */*"}
     request = {}
     request["FunctionName"]="duploservices-dev01-helloworld-128329325849"
     request["Timeout"]=20
@@ -24,7 +26,6 @@ def update_lambda():
     print("UpdateLambdaFunctionConfiguration start ", request)
     #https://msp.duplocloud.net/subscriptions/3369e68e-2bf7-415e-b78b-6cb6aef327ec/UpdateLambdaFunctionConfiguration
     endpoint = "{0}/subscriptions/{1}/UpdateLambdaFunctionConfiguration".format(DUPLO_URL, TENANTID)
-    headers = {"Authorization": "Bearer {0}".format( API_TOKEN )}
     response = requests.post(endpoint, headers=headers , data=request)
     print("UpdateLambdaFunctionConfiguration response ", endpoint, response)
 
@@ -35,7 +36,6 @@ def update_lambda():
     request["S3Key"]=s3_file
     print("UpdateLambdaFunction start ", request)
     endpoint = "{0}/subscriptions/{1}/UpdateLambdaFunction".format(DUPLO_URL, TENANTID)
-    headers = {"Authorization": "Bearer {0}".format( API_TOKEN )}
     response = requests.post(endpoint, headers=headers , data=request)
     print("UpdateLambdaFunction response ", endpoint, response)
 
