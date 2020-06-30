@@ -26,7 +26,7 @@ def update_lambda():
     endpoint = "{0}/subscriptions/{1}/UpdateLambdaFunctionConfiguration".format(DUPLO_URL, TENANTID)
     headers = {"Authorization": "Bearer {0}".format( API_TOKEN )}
     response = requests.post(endpoint, headers=headers , data=request)
-    print("UpdateLambdaFunctionConfiguration response ", response)
+    print("UpdateLambdaFunctionConfiguration response ", endpoint, response)
 
     #UpdateLambdaFunction
     request = {}
@@ -37,7 +37,7 @@ def update_lambda():
     endpoint = "{0}/subscriptions/{1}/UpdateLambdaFunction".format(DUPLO_URL, TENANTID)
     headers = {"Authorization": "Bearer {0}".format( API_TOKEN )}
     response = requests.post(endpoint, headers=headers , data=request)
-    print("UpdateLambdaFunction response ", response)
+    print("UpdateLambdaFunction response ", endpoint, response)
 
 if __name__ == "__main__":
     update_lambda()
