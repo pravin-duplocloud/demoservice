@@ -3,6 +3,7 @@
 if [[ "x$PHASE" != "x" ]]; then
   if [[ "$PHASE" == "PRE_DEPLOY_BUILD" ]]; then
     echo "Demo Test Build Docker image and push to docker hub!"
+    export S3_BUCKET_LAMBDA=$S3_BUCKET_LAMBDA
     ./build-zappa.sh
     exit 0
   elif [[ "$PHASE" == "POST_DEPLOY_VERIFICATION" ]]; then
