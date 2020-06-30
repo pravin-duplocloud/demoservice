@@ -22,7 +22,7 @@ def update_lambda():
         "MemorySize":128,
         "Handler":"handler.lambda_handler",
         "Description":"api gateway demo",
-        "Runtime":"python3.6"
+        "Runtime":"python3.7"
     }
 
     data = json.dumps(data)
